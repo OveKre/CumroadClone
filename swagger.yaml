@@ -8,11 +8,16 @@ info:
 servers:
   - url: http://localhost:3000
 # Global security requirement (all endpoints require a valid Bearer token)
+tags:
+  - name: TAGS  # <- Uue grupi (kategooria) nimi
+    description: Operations grouped under TAGS for easier navigation.
 security:
   - BearerAuth: []
 paths:
   /products:
     get:
+      tags:
+          - TAGS
       summary: List all products
       security:
         - BearerAuth: []
@@ -28,6 +33,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/Product'
     post:
+      tags:
+        - TAGS
       summary: Create a new product
       security:
         - BearerAuth: []
@@ -62,6 +69,8 @@ paths:
         schema:
           type: string
     get:
+      tags:
+        - TAGS
       summary: Get product details
       security:
         - BearerAuth: []
@@ -81,6 +90,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
+      tags:
+        - TAGS
       summary: Update an existing product
       security:
         - BearerAuth: []
@@ -113,6 +124,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
+      tags:
+        - TAGS
       summary: Delete a product
       security:
         - BearerAuth: []
@@ -129,6 +142,8 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   /checkout:
     post:
+      tags:
+        - TAGS
       summary: Create a checkout session for a product purchase
       security:
         - BearerAuth: []
@@ -142,6 +157,14 @@ paths:
             schema:
               $ref: '#/components/schemas/CheckoutRequest'
       responses:
+        200:
+          description: New response
+          content:
+            application/json:
+
+
+
+  schema:
         '201':
           description: Checkout session created.
           content:
@@ -162,6 +185,8 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   /sales:
     get:
+      tags:
+        - TAGS
       summary: List all sales
       security:
         - BearerAuth: []
@@ -185,6 +210,8 @@ paths:
         schema:
           type: string
     get:
+      tags:
+        - TAGS
       summary: Get sale details
       security:
         - BearerAuth: []
@@ -205,6 +232,8 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   /users:
     get:
+      tags:
+        - TAGS
       summary: List all users
       security:
         - BearerAuth: []
@@ -220,6 +249,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/User'
     post:
+      tags:
+        - TAGS
       summary: Create a new user (sign up)
       security:
         - BearerAuth: []
@@ -254,6 +285,8 @@ paths:
         schema:
           type: string
     get:
+      tags:
+        - TAGS
       summary: Get user details
       security:
         - BearerAuth: []
