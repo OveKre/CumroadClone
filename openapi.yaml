@@ -252,7 +252,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 
   components:
-  schemas:
+    schemas:
     NewSale:
       type: object
       properties:
