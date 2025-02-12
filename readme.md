@@ -19,7 +19,8 @@ Projekti eesmärgiks on võimaldada loojatel hallata tooteid, töötada ostu sea
 
 1. **Klooni projekt:**
    ```bash
-   git clone https://github.com/teie-kasutajanimi/gumroad-clone-api.git
+   git clone https://github.com/OveKre/CumroadCloneAPI
+
 ## Install
 
 ```sh
